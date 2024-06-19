@@ -4,7 +4,12 @@ import {getNote} from "../apis/local_storage_api";
 import {useEffect, useState} from "react";
 const NoteDetail = () => {
     const {id} = useParams();
-    const [note, setNote] = useState(null);
+    const [note, setNote] = useState({
+        id : '',
+        title : '',
+        content : '',
+        lastEdited : '',
+    });
 
     useEffect(() => {
         let ignore = false;
