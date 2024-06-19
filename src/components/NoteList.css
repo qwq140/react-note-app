@@ -1,0 +1,18 @@
+.note-list-container {
+    padding: 20px;
+}
+
+.note-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.note-list li {
+    margin: 10px 0;
+}
+
+.note-list li a {
+    font-size: 1.2rem;
+    color: #333;
+    text-decoration: none;
+}
