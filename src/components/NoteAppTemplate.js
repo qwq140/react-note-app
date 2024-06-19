@@ -1,3 +1,5 @@
+import './NoteAppTemplate.css';
+
 const NoteAppTemplate = ({children}) => {
     return (
         <div className="note-app">
