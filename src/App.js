@@ -1,12 +1,10 @@
 import './App.css';
-import HomePage from "./pages/HomePage";
-import DetailPage from "./pages/DetailPage";
-import CreatePage from "./pages/CreatePage";
+import EditPage from "./pages/EditPage";
 
 function App() {
   return (
       <div className="app-container">
-        <CreatePage/>
+        <EditPage/>
       </div>
   );
 }
