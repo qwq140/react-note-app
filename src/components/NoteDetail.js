@@ -1,7 +1,9 @@
 import {notes} from "../constants/data";
 import './NoteDetail.css';
+import {Link, useParams} from "react-router-dom";
 const NoteDetail = () => {
-    const note = notes[0];
+    const {id} = useParams();
+    const note = notes.find(note => note.id === parseInt(id));
 
     return (
         <div className="note-detail">
@@ -9,7 +11,7 @@ const NoteDetail = () => {
             <h2>{note.title}</h2>
             <p>last edited {note.lastEdited}</p>
             <p>{note.content}</p>
-            <a className="edit-button">Edit Note</a>
+            <Link to={`/edit/${id}`} className="edit-button">Edit Note</Link>
         </div>
     );
 }

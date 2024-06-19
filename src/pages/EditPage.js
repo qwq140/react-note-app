@@ -1,15 +1,17 @@
 import NoteAppTemplate from "../components/NoteAppTemplate";
 import NoteForm from "../components/NoteForm";
 import {notes} from "../constants/data";
+import {useParams} from "react-router-dom";
 
 const EditPage = () => {
+    const {id} = useParams();
 
-    const note = notes[0];
+    const note = notes.find(note => note.id === parseInt(id));
 
     return (
-        <NoteAppTemplate>
+        <>
             <NoteForm note={note} isEditing={false}/>
-        </NoteAppTemplate>
+        </>
     );
 }
 
