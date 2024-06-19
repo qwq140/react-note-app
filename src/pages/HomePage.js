@@ -1,12 +1,27 @@
 import './HomePage.css';
 import NoteList from "../components/NoteList";
-import NoteAppTemplate from "../components/NoteAppTemplate";
-import {notes} from "../constants/data";
 import {Link} from "react-router-dom";
+import {useEffect, useState} from "react";
+import {getNotes} from "../apis/local_storage_api";
 
 
 
 const HomePage = () => {
+
+    const [notes, setNotes] = useState([]);
+
+    useEffect(() => {
+        let ignore = false;
+        const fetchNotes = getNotes();
+        if(!ignore) {
+            setNotes(fetchNotes);
+        }
+        return () => {
+            ignore = true;
+        }
+
+    }, []);
+
     return (
         <>
             <input className="search-input" type="text" placeholder="Search notes..."/>

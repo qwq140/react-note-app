@@ -1,4 +1,5 @@
 import './NoteList.css';
+import {Link} from "react-router-dom";
 
 const NoteList = ({notes}) => {
     return (
@@ -6,7 +7,7 @@ const NoteList = ({notes}) => {
             <ul className="note-list">
                 {notes.map(note => (
                     <li key={note.id}>
-                        <a href="#">{note.title}</a>
+                        <Link to={`/detail/${note.id}`}>{note.title}</Link>
                         <p>last edited {note.lastEdited}</p>
                     </li>
                 ))}

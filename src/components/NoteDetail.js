@@ -1,13 +1,26 @@
-import {notes} from "../constants/data";
 import './NoteDetail.css';
 import {Link, useParams} from "react-router-dom";
+import {getNote} from "../apis/local_storage_api";
+import {useEffect, useState} from "react";
 const NoteDetail = () => {
     const {id} = useParams();
-    const note = notes.find(note => note.id === parseInt(id));
+    const [note, setNote] = useState(null);
+
+    useEffect(() => {
+        let ignore = false;
+        const fetchNote = getNote(id);
+        if(!ignore) {
+            setNote(fetchNote);
+        }
+
+        return () => {
+            ignore = true;
+        }
+    }, []);
 
     return (
         <div className="note-detail">
-            <a className="back-button">Back</a>
+            <Link to={'/'} className="back-button">Back</Link>
             <h2>{note.title}</h2>
             <p>last edited {note.lastEdited}</p>
             <p>{note.content}</p>
