@@ -3,7 +3,7 @@ import NoteForm from "../components/NoteForm";
 import {notes} from "../constants/data";
 import {useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
-import {getNote, updateNote} from "../apis/local_storage_api";
+import {deleteNote, getNote, updateNote} from "../apis/local_storage_api";
 
 const EditPage = () => {
     const {id} = useParams();
@@ -37,9 +37,14 @@ const EditPage = () => {
         navigator(`/detail/${id}`);
     }
 
+    const handleDelete = () => {
+        deleteNote(id);
+        navigator('/');
+    }
+
     return (
         <>
-            <NoteForm note={note} isEditing={true} onSubmit={handleSubmit}/>
+            <NoteForm note={note} isEditing={true} onSubmit={handleSubmit} onDelete={handleDelete}/>
         </>
     );
 }
