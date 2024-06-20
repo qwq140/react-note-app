@@ -1,5 +1,5 @@
 import './NoteForm.css';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 // CreatePage, EditPage에서 사용할 컴포넌트이다.
 // CreatePage
@@ -19,6 +19,11 @@ const NoteForm = ({note, isEditing, onSubmit}) => {
         e.preventDefault();
         onSubmit(title, content);
     }
+
+    useEffect(() => {
+        setTitle(note.title);
+        setContent(note.content);
+    }, [note]);
 
     return (
       <form className="note-form" onSubmit={handleSubmit}>
