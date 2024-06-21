@@ -1,18 +1,53 @@
-.note-list-container {
-    padding: 20px;
-}
-
 .note-list {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
+    width: 100%;
+    max-height: 400px;
+    min-height: 400px;
+    overflow-y: auto;
 }
 
-.note-list li {
+.note-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.note-list::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.note-list::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+.note-item {
+    display: block;
+    background: #f9f9f9; /* 배경을 밝은 회색으로 변경 */
+    padding: 20px;
     margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.note-list li a {
-    font-size: 1.2rem;
+.note-item h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+    font-family: 'Merriweather', serif;
     color: #333;
-    text-decoration: none;
+}
+
+.note-item p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #999;
+}
+
+.note-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: #f0f0f0;
 }
