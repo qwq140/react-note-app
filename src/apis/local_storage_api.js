@@ -1,4 +1,4 @@
-import {formatCurrentDate} from "../utils/date_util";
+import {formatCurrentDate} from "../utils/dateUtil";
 
 const STORAGE_KEY = 'notes';
 
