@@ -4,7 +4,6 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     width: 500px;
     padding: 30px;
-    text-align: center;
 }
 
 header h1 {
@@ -20,5 +19,7 @@ header p {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
     margin-top: 20px;
 }

@@ -27,8 +27,8 @@ const NoteDetail = () => {
         <div className="note-detail">
             <Link to={'/'} className="back-button">Back</Link>
             <h2>{note.title}</h2>
-            <p>last edited {note.lastEdited}</p>
-            <p>{note.content}</p>
+            <div className="note-detail-date">last edited {note.lastEdited}</div>
+            <div className="note-detail-content">{note.content}</div>
             <Link to={`/edit/${id}`} className="edit-button">Edit Note</Link>
         </div>
     );

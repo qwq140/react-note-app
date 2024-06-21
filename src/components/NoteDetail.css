@@ -1,18 +1,36 @@
 .note-detail {
-    padding:20px
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.note-detail h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 2em;
+    color: #333;
+    margin: 10px 0;
 }
 
 .back-button {
     display: inline-block;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: white;
     text-decoration: none;
-    color: #888;
-    font-size: 0.9rem;
+    border-radius: 5px;
+    align-self: flex-start;
+}
+
+.back-button:hover {
+    color: #5a6268;
 }
 
 .edit-button {
+    align-self: center;
     display: inline-block;
-    margin-top: 20px;
+    margin-top: auto;
     padding: 10px 20px;
     background-color: #007bff;
     color: white;
@@ -22,4 +40,35 @@
 
 .edit-button:hover {
     background-color: #0056b3;
+}
+
+.note-detail-content {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    color: #555;
+    margin: 10px 0;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.note-detail-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.note-detail-content::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.note-detail-content::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+
+.note-detail-date {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    color: #555;
+    margin: 5px 0;
+    text-align: end;
 }
