@@ -6,7 +6,6 @@
 }
 
 .note-detail h2 {
-    font-family: 'Merriweather', serif;
     font-size: 2em;
     color: #333;
     margin: 10px 0;
@@ -43,7 +42,6 @@
 }
 
 .note-detail-content {
-    font-family: 'Roboto', sans-serif;
     font-size: 1em;
     color: #555;
     margin: 10px 0;
@@ -66,7 +64,6 @@
 
 
 .note-detail-date {
-    font-family: 'Roboto', sans-serif;
     font-size: 1em;
     color: #555;
     margin: 5px 0;

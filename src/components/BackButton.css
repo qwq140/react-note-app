@@ -1,0 +1,14 @@
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    align-self: flex-start;
+}
+
+.back-button:hover {
+    color: #5a6268;
+}

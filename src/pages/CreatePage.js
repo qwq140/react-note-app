@@ -1,7 +1,8 @@
 import NoteAppTemplate from "../components/NoteAppTemplate";
 import NoteForm from "../components/NoteForm";
 import {addNote} from "../apis/local_storage_api";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import BackButton from "../components/BackButton";
 
 const CreatePage = () => {
     const navigate = useNavigate();
@@ -17,6 +18,7 @@ const CreatePage = () => {
 
     return (
         <>
+            <BackButton url={'/'}/>
             <NoteForm onSubmit={handleAddNote} isEditing={false}/>
         </>
     );

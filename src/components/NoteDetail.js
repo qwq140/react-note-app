@@ -2,6 +2,7 @@ import './NoteDetail.css';
 import {Link, useParams} from "react-router-dom";
 import {getNote} from "../apis/local_storage_api";
 import {useEffect, useState} from "react";
+import BackButton from "./BackButton";
 const NoteDetail = () => {
     const {id} = useParams();
     const [note, setNote] = useState({
@@ -25,7 +26,7 @@ const NoteDetail = () => {
 
     return (
         <div className="note-detail">
-            <Link to={'/'} className="back-button">Back</Link>
+            <BackButton url={'/'}/>
             <h2>{note.title}</h2>
             <div className="note-detail-date">last edited {note.lastEdited}</div>
             <div className="note-detail-content">{note.content}</div>
