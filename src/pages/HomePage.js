@@ -1,10 +1,11 @@
 import './HomePage.css';
-import NoteList from "../components/NoteList";
+import NoteList from "../components/note/NoteList";
 import {Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {getNotes} from "../apis/local-storage-api";
-import SearchBar from "../components/SearchBar";
+import SearchBar from "../components/note/SearchBar";
 import {filterNote} from "../utils/filterNote";
+import NoteAppTemplate from "../components/common/NoteAppTemplate";
 
 
 
@@ -31,11 +32,11 @@ const HomePage = () => {
     }
 
     return (
-        <>
+        <NoteAppTemplate>
             <SearchBar query={query} onChange={handleSearch}/>
             <NoteList notes={filteredNotes}/>
             <Link to='/create' className="create-button">Create Note</Link>
-        </>
+        </NoteAppTemplate>
     );
 };
 

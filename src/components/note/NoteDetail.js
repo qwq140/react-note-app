@@ -1,8 +1,8 @@
 import './NoteDetail.css';
 import {Link, useParams} from "react-router-dom";
-import {getNote} from "../apis/local-storage-api";
+import {getNote} from "../../apis/local-storage-api";
 import {useEffect, useState} from "react";
-import BackButton from "./BackButton";
+import BackButton from "../common/BackButton";
 const NoteDetail = () => {
     const {id} = useParams();
     const [note, setNote] = useState({

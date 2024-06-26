@@ -1,10 +1,10 @@
-import NoteAppTemplate from "../components/NoteAppTemplate";
-import NoteForm from "../components/NoteForm";
+import NoteAppTemplate from "../components/common/NoteAppTemplate";
+import NoteForm from "../components/note/NoteForm";
 import {notes} from "../constants/data";
 import {useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {deleteNote, getNote, updateNote} from "../apis/local-storage-api";
-import BackButton from "../components/BackButton";
+import BackButton from "../components/common/BackButton";
 
 const EditPage = () => {
     const {id} = useParams();
@@ -44,10 +44,10 @@ const EditPage = () => {
     }
 
     return (
-        <>
+        <NoteAppTemplate>
             <BackButton url={`/detail/${id}`}/>
             <NoteForm note={note} isEditing={true} onSubmit={handleSubmit} onDelete={handleDelete}/>
-        </>
+        </NoteAppTemplate>
     );
 }
 
