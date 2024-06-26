@@ -2,7 +2,7 @@ import './HomePage.css';
 import NoteList from "../components/NoteList";
 import {Link} from "react-router-dom";
 import {useEffect, useState} from "react";
-import {getNotes} from "../apis/local_storage_api";
+import {getNotes} from "../apis/local-storage-api";
 import SearchBar from "../components/SearchBar";
 import {filterNote} from "../utils/filterNote";
 

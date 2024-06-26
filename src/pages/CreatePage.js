@@ -1,6 +1,6 @@
 import NoteAppTemplate from "../components/NoteAppTemplate";
 import NoteForm from "../components/NoteForm";
-import {addNote} from "../apis/local_storage_api";
+import {addNote} from "../apis/local-storage-api";
 import {Link, useNavigate} from "react-router-dom";
 import BackButton from "../components/BackButton";
 

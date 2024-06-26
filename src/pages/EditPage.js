@@ -3,7 +3,7 @@ import NoteForm from "../components/NoteForm";
 import {notes} from "../constants/data";
 import {useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
-import {deleteNote, getNote, updateNote} from "../apis/local_storage_api";
+import {deleteNote, getNote, updateNote} from "../apis/local-storage-api";
 import BackButton from "../components/BackButton";
 
 const EditPage = () => {
