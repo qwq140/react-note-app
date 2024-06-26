@@ -1,18 +1,18 @@
 import {useState} from "react";
 import InputField from "./InputField";
 
-const LoginForm = ({onSubmit}) => {
+const LoginForm = ({handleLogin}) => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleLogin = (e) => {
+    const onSubmit = (e) => {
         e.preventDefault();
-        onSubmit({username, password});
+        handleLogin(username, password);
     }
 
     return (
-        <form onSubmit={handleLogin}>
+        <form onSubmit={onSubmit}>
             <InputField
                 type="text"
                 placeholder="Username"

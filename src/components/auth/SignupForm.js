@@ -8,7 +8,7 @@ const SignupForm = ({ handleSignup }) => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        handleSignup({username, password, nickname});
+        handleSignup(username, password, nickname);
     }
 
     return (

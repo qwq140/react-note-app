@@ -6,6 +6,7 @@ import {getNotes} from "../apis/local-storage-api";
 import SearchBar from "../components/note/SearchBar";
 import {filterNote} from "../utils/filterNote";
 import NoteAppTemplate from "../components/common/NoteAppTemplate";
+import {fetchNotes} from "../apis/note";
 
 
 
@@ -15,12 +16,20 @@ const HomePage = () => {
 
     const filteredNotes = filterNote(notes, query);
 
+    const loadData = async (ignore) => {
+        const result = await fetchNotes();
+        if(!ignore) {
+            if(result.code === 1) {
+                setNotes(result.data.noteList);
+            } else {
+                alert(result.message);
+            }
+        }
+    }
+
     useEffect(() => {
         let ignore = false;
-        const fetchNotes = getNotes();
-        if(!ignore) {
-            setNotes(fetchNotes);
-        }
+        loadData(ignore);
         return () => {
             ignore = true;
         }

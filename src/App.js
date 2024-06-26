@@ -7,22 +7,26 @@ import DetailPage from "./pages/DetailPage";
 import CreatePage from "./pages/CreatePage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
+import PrivateRoutes from "./router/PrivateRoutes";
+import {AuthProvider} from "./context/AuthProvider";
 
 
 function App() {
   return (
-      <div className="app-container">
+      <AuthProvider>
             <Router>
                 <Routes>
-                    <Route path="/" element={<HomePage/>}/>
-                    <Route path="/detail/:id" element={<DetailPage/>}/>
-                    <Route path="/create" element={<CreatePage/>}/>
-                    <Route path="/edit/:id" element={<EditPage/>}/>
                     <Route path="/signup" element={<SignupPage/>}/>
                     <Route path="/login" element={<LoginPage/>}/>
+                    <Route element={<PrivateRoutes/>}>
+                        <Route path="/" element={<HomePage/>}/>
+                        <Route path="/detail/:id" element={<DetailPage/>}/>
+                        <Route path="/create" element={<CreatePage/>}/>
+                        <Route path="/edit/:id" element={<EditPage/>}/>
+                    </Route>
                 </Routes>
             </Router>
-      </div>
+      </AuthProvider>
   );
 }
 
