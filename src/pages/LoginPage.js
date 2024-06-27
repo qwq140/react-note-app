@@ -7,13 +7,11 @@ import {useAuth} from "../context/AuthProvider";
 const LoginPage = () => {
 
     const {login} = useAuth();
-    const navigate = useNavigate();
 
     const handleLogin = async (username, password) => {
         const result = await fetchLogin({username : username, password : password});
         if(result.code === 1) {
             login(result.data.accessToken, result.data.refreshToken);
-            navigate('/');
         } else {
             alert(result.message);
         }

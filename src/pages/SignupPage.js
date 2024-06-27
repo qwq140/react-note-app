@@ -5,12 +5,12 @@ import {fetchJoin} from "../apis/auth";
 
 const SignupPage = () => {
 
-    // const navigator = useNavigate();
+    const navigate = useNavigate();
 
     const handleSignup = async (username, password, nickname) => {
         const result = await fetchJoin({username, password, nickname});
         if(result.code === 1) {
-            // navigator('/login');
+            navigate('/login');
         } else {
             alert(result.message);
         }

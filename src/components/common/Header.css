@@ -1,0 +1,58 @@
+.header {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-family: 'Merriweather', serif;
+    font-size: 1.5em;
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    color: #007bff;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: #0056b3;
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    color: #007bff;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.logout-button:hover {
+    color: #0056b3;
+}
