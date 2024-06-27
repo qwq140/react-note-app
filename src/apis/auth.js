@@ -6,7 +6,10 @@ export const fetchLogin = async (data) => {
         const response = await api.post(`${ENDPOINT}/login`, data);
         return response.data;
     } catch (error) {
-        return error.response.data;
+        if(error.response.data) {
+            return error.response.data;
+        }
+        alert(error);
     }
 }
 
@@ -15,7 +18,10 @@ export const fetchJoin = async (data) => {
         const response = await api.post(`${ENDPOINT}/join`, data);
         return response.data;
     } catch (error) {
-        return error.response.data;
+        if(error.response.data) {
+            return error.response.data;
+        }
+        alert(error);
     }
 }
 
