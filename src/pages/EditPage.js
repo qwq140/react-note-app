@@ -3,8 +3,8 @@ import NoteForm from "../components/note/NoteForm";
 import {notes} from "../constants/data";
 import {useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
-import {deleteNote, getNote, updateNote} from "../apis/local-storage-api";
 import BackButton from "../components/common/BackButton";
+import {deleteNote, fetchNoteById, updateNote} from "../apis/note";
 
 const EditPage = () => {
     const {id} = useParams();
@@ -14,33 +14,50 @@ const EditPage = () => {
         id : '',
         title : '',
         content : '',
-        lastEdited : '',
+        updatedAt : '',
     });
+
+    const fetchData = async (ignore) => {
+        const result = await fetchNoteById(id);
+        if(!ignore) {
+            if(result.code === 1) {
+                setNote(result.data);
+            } else {
+                alert(result.message);
+            }
+        }
+    }
 
     useEffect(() => {
         let ignore = false;
-        const fetchNote = getNote(id);
-        if(!ignore) {
-            setNote(fetchNote);
-        }
+        fetchData(ignore);
 
         return () => {
             ignore = true;
         }
     }, []);
 
-    const handleSubmit = (title, content) => {
-        updateNote({
+    const handleSubmit = async (title, content) => {
+        const result = await updateNote(id,{
             ...note,
             title,
             content,
         });
-        navigator(`/detail/${id}`);
+        if(!result) return;
+        if(result.code === 1) {
+            navigator(`/detail/${id}`);
+        } else {
+            alert(result.message);
+        }
     }
 
-    const handleDelete = () => {
-        deleteNote(id);
-        navigator('/');
+    const handleDelete = async () => {
+        const result = await deleteNote(id);
+        if(result.code === 1) {
+            navigator('/');
+        } else {
+            alert(result.message);
+        }
     }
 
     return (

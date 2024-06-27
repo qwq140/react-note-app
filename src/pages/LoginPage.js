@@ -10,6 +10,7 @@ const LoginPage = () => {
 
     const handleLogin = async (username, password) => {
         const result = await fetchLogin({username : username, password : password});
+        if(!result) return;
         if(result.code === 1) {
             login(result.data.accessToken, result.data.refreshToken);
         } else {

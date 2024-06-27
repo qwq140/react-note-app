@@ -9,6 +9,9 @@ const SignupPage = () => {
 
     const handleSignup = async (username, password, nickname) => {
         const result = await fetchJoin({username, password, nickname});
+
+        if(!result) return;
+
         if(result.code === 1) {
             navigate('/login');
         } else {
@@ -20,7 +23,7 @@ const SignupPage = () => {
         <AuthTemplate>
             <h1>Sign Up</h1>
             <SignupForm handleSignup={handleSignup}/>
-            <p>Already have an account? <Link to="/login" className="auth-link">Sign Up</Link></p>
+            <p>Already have an account? <Link to="/login" className="auth-link">Log In</Link></p>
         </AuthTemplate>
     )
 }
