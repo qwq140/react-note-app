@@ -30,8 +30,6 @@
 ## 추가 구현할 기능
 - ~~서버단 개발하여 api 통신~~
 - ~~토큰이 만료된 상태일 때 토큰 재발급 로직 구현~~
-- Context API, Reducer를 이용하여 리펙토링
-- 수정된 날짜로 필터링
 
 
-
+Spring API Server : https://github.com/qwq140/springboot-note-app
